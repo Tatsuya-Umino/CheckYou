@@ -10,6 +10,7 @@ import play.libs.F.Option;
 import java.util.*;
 
 @Entity
+@Table(name = "checks")
 public class Check extends Model {
 
     @Id
@@ -92,6 +93,27 @@ public class Check extends Model {
     		 return value;
     	 }
      }
+
+	public void setCreated(Date currentDate) {
+		this.created = currentDate;
+	}
+
+	public void setId(Long id2) {
+		this.id = id2;
+	}
+
+	public Long getId(){
+		return this.id;
+	}
+
+	public String getName(){
+		return this.name;
+	}
+
+	public String getResult(){
+		return this.result;
+	}
+
 
 
 }

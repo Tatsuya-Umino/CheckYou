@@ -21,8 +21,6 @@ public class CheckModelService implements ModelService<Check> {
 
     @Override
     public Option<Check> findById(Long id) {
-    	//Option<Check> check = OptionUtil.apply(Check.find.byId(id));
-    	//rerutn check;
     	Finder<Long, Check> find = new Finder<Long, Check>(Long.class, Check.class);
         return OptionUtil.apply(find.byId(id));
     }
@@ -52,7 +50,7 @@ public class CheckModelService implements ModelService<Check> {
         //List<Check> c = Check.find.orderBy("created desc").findPagingList(LIMIT).getPage(pageNum).getList();
         //return OptionUtil.apply(c);
         Finder<Long, Check> find = new Finder<Long, Check>(Long.class, Check.class);
-        return OptionUtil.apply(find.orderBy("created desc").findPagingList(LIMIT).getPage(pageNum).getList());
+        return OptionUtil.apply(find.orderBy("created").findPagingList(LIMIT).getPage(pageNum).getList());
     }
 
     public Option<Integer> getMaxPage() {

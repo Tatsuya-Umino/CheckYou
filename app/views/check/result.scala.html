@@ -1,10 +1,10 @@
-@(title: String, check: models.entity.Check)
+@(title: String, check: models.entity.Check, session: String, cookie: String)
 
 @import helper._
 
 @main(title) {
     <div class="check-result">
-        <h2 id="title">@title</h2>
+        <h2 id="title">@session @title @cookie</h2>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">@{check.name}さん</h3>
